@@ -31,7 +31,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
 
   //! END @TODO1
 
-  app.get('/filteredimage',async (req: express.Request, res: express.Response) => {
+  app.get('/filteredimage', async (req: express.Request, res: express.Response) => {
     let url = req.query.image_url;
     if (!url){
       res.status(404).send('Invalid Url: Provide the right url')
