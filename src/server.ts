@@ -35,12 +35,12 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
     let url = req.query.image_url;
     if (!url){
       res.status(404).send('Invalid Url: Provide the right url')
-    }
+    } else {
     let new_image = await filterImageFromURL(url);
     res.status(200).sendFile(new_image, () => {
       deleteLocalFiles([new_image])
     })
-    
+  }
   });
   
 
